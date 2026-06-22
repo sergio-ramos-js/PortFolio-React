@@ -3,13 +3,15 @@ import { RiInstagramFill } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
 
 function Footer (){
-    const { t } = useTranslation(); 
+    const { t } = useTranslation();
+    const currentYear = new Date().getFullYear();
+
     return(
         <footer className="footer">
             <div className="footer-text flex gap-x-2">
                 <p className="w-fit">
-                    Copyright <span className="copy text-white text-[1.9rem]">&copy; </span> 
-                    2024 {t('by')} <span>SRG. </span> Developer | {t('rights')}.
+                    Copyright <span className="copy text-white text-[1.9rem]">&copy; </span>
+                    <time dateTime={String(currentYear)}>{currentYear}</time> {t('by')} <span>SRG. </span> Developer | {t('rights')}.
                 </p>
             </div>
             <div className="footer-iconTop">

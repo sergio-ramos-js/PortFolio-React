@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { useTranslation } from "react-i18next";
 import { FaXTwitter, FaLinkedinIn, FaGithub, FaFacebookF } from "react-icons/fa6";
@@ -18,7 +18,7 @@ function Home (){
         });
 
         sr.reveal('.home-content, .heading', { origin: 'top' });
-        sr.reveal('.home-img, .services-container, .portfolio-box, .contact form', { origin: 'bottom' });
+        sr.reveal('.home-img, .services-container, .skills-mention, .portfolio-box, .contact form', { origin: 'bottom' });
         sr.reveal('.home-content h1, .about-img', { origin: 'left' });
         sr.reveal('.home-content p, .about-content', { origin: 'right' });
 

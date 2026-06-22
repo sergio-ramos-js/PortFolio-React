@@ -3,6 +3,16 @@ import { useTranslation } from 'react-i18next';
 import { RiTailwindCssFill, RiGithubFill, RiReactjsFill } from "react-icons/ri";
 import { SiTypescript } from "react-icons/si";
 
+const OTHER_SKILLS = [
+    { name: "Python" },
+    { name: "MySQL" },
+    { name: "Laravel" },
+    { name: "Express" },
+    { name: "Node.js" },
+    { name: "PostgreSQL" },
+    { name: "MongoDB" },
+];
+
 function Skills() {
     const { t } = useTranslation();
     const [isAnyExpanded, setIsAnyExpanded] = useState(false);
@@ -149,6 +159,17 @@ function Skills() {
                         className="btn">
                         {isExpandedGithub?t('showless'):t('showmore')}
                     </a>
+                </div>
+            </div>
+            <div className="skills-mention">
+                <p>{t("otherSkillsIntro")}</p>
+                <div className="skills-tags">
+                    {OTHER_SKILLS.map(({ name }) => (
+                        <span key={name} className="skills-tag">
+                            {name}
+                        </span>
+                    ))}
+                    <span className="skills-tag">{t("englishC1")}</span>
                 </div>
             </div>
         </section>
