@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RiTailwindCssFill, RiGithubFill, RiReactjsFill } from "react-icons/ri";
-import { IoLogoJavascript } from "react-icons/io5";
+import { SiTypescript } from "react-icons/si";
 
 function Skills() {
     const { t } = useTranslation();
     const [isAnyExpanded, setIsAnyExpanded] = useState(false);
     const [isExpanded, setIsExpanded] = useState(false);
-    const [isExpandedJs, setIsExpandedJs] = useState(false);
+    const [isExpandedTs, setIsExpandedTs] = useState(false);
     const [isExpandedReact, setIsExpandedReact] = useState(false);
     const [isExpandedGithub, setIsExpandedGithub] = useState(false);
 
@@ -22,19 +22,19 @@ function Skills() {
         setIsExpanded(newState);
         checkAnyExpanded({
             isExpanded: newState,
-            isExpandedJs,
+            isExpandedTs,
             isExpandedReact,
             isExpandedGithub,
         });
     };
 
-    const toggleExpandJs = (e) => {
+    const toggleExpandTs = (e) => {
         e.preventDefault();
-        const newState = !isExpandedJs;
-        setIsExpandedJs(newState);
+        const newState = !isExpandedTs;
+        setIsExpandedTs(newState);
         checkAnyExpanded({
             isExpanded,
-            isExpandedJs: newState,
+            isExpandedTs: newState,
             isExpandedReact,
             isExpandedGithub,
         });
@@ -46,7 +46,7 @@ function Skills() {
         setIsExpandedReact(newState);
         checkAnyExpanded({
             isExpanded,
-            isExpandedJs,
+            isExpandedTs,
             isExpandedReact: newState,
             isExpandedGithub,
         });
@@ -58,7 +58,7 @@ function Skills() {
         setIsExpandedGithub(newState);
         checkAnyExpanded({
             isExpanded,
-            isExpandedJs,
+            isExpandedTs,
             isExpandedReact,
             isExpandedGithub: newState,
         });
@@ -84,26 +84,48 @@ function Skills() {
                         {isExpanded ? t("showless") : t("showmore")}
                     </a>
                 </div>
-                {/* <!-- JavaScript --> */}
+                {/* <!-- React --> */}
                 <div className="services-box flex flex-col items-center">
-                    <IoLogoJavascript size={'70'} fill='#00abf0'/>
-                    <h3>JavaScript</h3>
+                    <RiReactjsFill size={'70'} fill='#00abf0'/>
+                    <h3>React</h3>
                     <p className='parrafo'>
-                        {t('javascript')}
+                        {t('react')}
                     </p>
                     <div className={`transition-all duration-700 ease-in-out overflow-hidden`}
-                        style={{ maxHeight: isExpandedJs ? '500px' : '0', }}>
-                        {isExpandedJs &&(
+                        style={{ maxHeight: isExpandedReact ? '500px' : '0', }}>
+                        {isExpandedReact && (
                             <p className='expanded-text pb-8'>
-                                {t('javascriptext')}
+                                {t('reactext')}
                             </p>
                             )
                         }
                     </div>
                     <div className="flex flex-grow"></div>
-                    <a onClick={toggleExpandJs} href="#" id="botonTailwind" 
+                    <a onClick={toggleExpandReact} href="#" id="botonTailwind" 
                         className="btn">
-                        {isExpandedJs?t('showless'):t('showmore')}
+                        {isExpandedReact?t('showless'):t('showmore')}
+                    </a>
+                </div>
+                {/* <!-- TypeScript --> */}
+                <div className="services-box flex flex-col items-center">
+                    <SiTypescript size={'70'} fill='#00abf0'/>
+                    <h3>TypeScript</h3>
+                    <p className='parrafo'>
+                        {t('typescript')}
+                    </p>
+                    <div className={`transition-all duration-700 ease-in-out overflow-hidden`}
+                        style={{ maxHeight: isExpandedTs ? '500px' : '0', }}>
+                        {isExpandedTs &&(
+                            <p className='expanded-text pb-8'>
+                                {t('typescriptext')}
+                            </p>
+                            )
+                        }
+                    </div>
+                    <div className="flex flex-grow"></div>
+                    <a onClick={toggleExpandTs} href="#" id="botonTailwind" 
+                        className="btn">
+                        {isExpandedTs?t('showless'):t('showmore')}
                     </a>
                 </div>
                 {/* <!-- Github --> */}
@@ -126,28 +148,6 @@ function Skills() {
                     <a onClick={toggleExpandGithub} href="#" id="botonTailwind" 
                         className="btn">
                         {isExpandedGithub?t('showless'):t('showmore')}
-                    </a>
-                </div>
-                {/* <!-- React --> */}
-                <div className="services-box flex flex-col items-center">
-                    <RiReactjsFill size={'70'} fill='#00abf0'/>
-                    <h3>React</h3>
-                    <p className='parrafo'>
-                        {t('react')}
-                    </p>
-                    <div className={`transition-all duration-700 ease-in-out overflow-hidden`}
-                        style={{ maxHeight: isExpandedReact ? '500px' : '0', }}>
-                        {isExpandedReact && (
-                            <p className='expanded-text pb-8'>
-                                {t('reactext')}
-                            </p>
-                            )
-                        }
-                    </div>
-                    <div className="flex flex-grow"></div>
-                    <a onClick={toggleExpandReact} href="#" id="botonTailwind" 
-                        className="btn">
-                        {isExpandedReact?t('showless'):t('showmore')}
                     </a>
                 </div>
             </div>

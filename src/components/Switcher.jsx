@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const LanguageSwitcher = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const [isEnglish, setIsEnglish] = useState(true);
 
   const toggleLanguage = () => {
@@ -14,7 +14,7 @@ const LanguageSwitcher = () => {
   return (
     <div className="lang">
     <span id="es" className="sp mr-2">
-      Sp
+      Es
     </span>
     <input
       id="lang-check" // Atributo id

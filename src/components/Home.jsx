@@ -58,19 +58,19 @@ function Home (){
                         <FaFacebookF />
                     </a>
                     <a className="inline-flex justify-center items-center w-[4rem] h-[4rem] bg-transparent text-[2rem]"
-                        href="https://x.com/ramos_sergio24" target="_blank">
+                        href="#" target="_blank">
                         <FaXTwitter />
                     </a>
                     <a className="inline-flex justify-center items-center w-[4rem] h-[4rem] bg-transparent text-[2rem]"
-                        href="https://www.instagram.com/ramos.sergio24/" target="_blank">
+                        href="#" target="_blank">
                         <RiInstagramFill />
                     </a>
                     <a className="inline-flex justify-center items-center w-[4rem] h-[4rem] bg-transparent text-[2rem]"
-                        href="https://www.linkedin.com/in/sergio-ramos-210b162a4/" target="_blank">
+                        href="https://www.linkedin.com/in/sergio-ramos-425980353" target="_blank">
                         <FaLinkedinIn />
                     </a>
                     <a className="inline-flex justify-center items-center w-[4rem] h-[4rem] bg-transparent text-[2rem]"
-                        href="https://github.com/ORION-sergy/ORION-sergy" target="_blank">
+                        href="https://github.com/sergio-ramos-js" target="_blank">
                         <FaGithub />
                     </a>
                 </div>

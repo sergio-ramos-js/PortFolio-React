@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Port() {
   const { t } = useTranslation();
@@ -31,6 +31,7 @@ function Port() {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isSliderVisible, isSlider2Visible]);
+  
   const images = [
     { original: "/images/libro_slider1.png", thumbnail: "/images/libro_slider1.png" },
     { original: "/images/libro_slider2.1.png", thumbnail: "/images/libro_slider2.1.png" },

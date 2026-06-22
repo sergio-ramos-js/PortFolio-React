@@ -17,16 +17,16 @@ function Footer (){
                     <a href="#" target="_blank">
                         <FaFacebookF fill="#323946"/>
                     </a>
-                    <a href="https://x.com/ramos_sergio24" target="_blank">
+                    <a href="#" target="_blank">
                         <FaXTwitter fill="#323946" />
                     </a>
-                    <a href="https://www.instagram.com/ramos.sergio24/" target="_blank">
+                    <a href="#" target="_blank">
                         <RiInstagramFill fill="#323946" />
                     </a>
-                    <a href="https://www.linkedin.com/in/sergio-ramos-210b162a4/" target="_blank">
+                    <a href="https://www.linkedin.com/in/sergio-ramos-425980353" target="_blank">
                         <FaLinkedinIn fill="#323946" />
                     </a>
-                    <a href="https://github.com/ORION-sergy/ORION-sergy" target="_blank">
+                    <a href="https://github.com/sergio-ramos-js" target="_blank">
                         <FaGithub fill="#323946" />
                     </a>
                 </div>
