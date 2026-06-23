@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RiTailwindCssFill, RiGithubFill, RiReactjsFill } from "react-icons/ri";
-import { SiTypescript } from "react-icons/si";
+import { RiReactjsFill } from "react-icons/ri";
+import { SiTypescript, SiLaravel, SiMysql } from "react-icons/si";
 
 const OTHER_SKILLS = [
     { name: "Python" },
-    { name: "MySQL" },
-    { name: "Laravel" },
+    { name: "Tailwind CSS" },
+    { name: "GitHub" },
     { name: "Express" },
     { name: "Node.js" },
     { name: "PostgreSQL" },
@@ -16,25 +16,25 @@ const OTHER_SKILLS = [
 function Skills() {
     const { t } = useTranslation();
     const [isAnyExpanded, setIsAnyExpanded] = useState(false);
-    const [isExpanded, setIsExpanded] = useState(false);
+    const [isExpandedLaravel, setIsExpandedLaravel] = useState(false);
     const [isExpandedTs, setIsExpandedTs] = useState(false);
     const [isExpandedReact, setIsExpandedReact] = useState(false);
-    const [isExpandedGithub, setIsExpandedGithub] = useState(false);
+    const [isExpandedMysql, setIsExpandedMysql] = useState(false);
 
     // Función auxiliar para verificar si alguna tarjeta está expandida
     const checkAnyExpanded = (expandedStates) => {
         setIsAnyExpanded(Object.values(expandedStates).some((state) => state));
     };
 
-    const toggleExpand = (e) => {
+    const toggleExpandLaravel = (e) => {
         e.preventDefault();
-        const newState = !isExpanded;
-        setIsExpanded(newState);
+        const newState = !isExpandedLaravel;
+        setIsExpandedLaravel(newState);
         checkAnyExpanded({
-            isExpanded: newState,
+            isExpandedLaravel: newState,
             isExpandedTs,
             isExpandedReact,
-            isExpandedGithub,
+            isExpandedMysql,
         });
     };
 
@@ -43,10 +43,10 @@ function Skills() {
         const newState = !isExpandedTs;
         setIsExpandedTs(newState);
         checkAnyExpanded({
-            isExpanded,
+            isExpandedLaravel,
             isExpandedTs: newState,
             isExpandedReact,
-            isExpandedGithub,
+            isExpandedMysql,
         });
     };
 
@@ -55,22 +55,22 @@ function Skills() {
         const newState = !isExpandedReact;
         setIsExpandedReact(newState);
         checkAnyExpanded({
-            isExpanded,
+            isExpandedLaravel,
             isExpandedTs,
             isExpandedReact: newState,
-            isExpandedGithub,
+            isExpandedMysql,
         });
     };
 
-    const toggleExpandGithub = (e) => {
+    const toggleExpandMysql = (e) => {
         e.preventDefault();
-        const newState = !isExpandedGithub;
-        setIsExpandedGithub(newState);
+        const newState = !isExpandedMysql;
+        setIsExpandedMysql(newState);
         checkAnyExpanded({
-            isExpanded,
+            isExpandedLaravel,
             isExpandedTs,
             isExpandedReact,
-            isExpandedGithub: newState,
+            isExpandedMysql: newState,
         });
     };
 
@@ -78,20 +78,20 @@ function Skills() {
         <section className="services" id="services">
             <h2 className="heading">{t("my")}<span> {t("skills")}</span></h2>
             <div className={`services-container ${isAnyExpanded ? "items-center" : "items-stretch"}`}>
-                {/* Tarjeta de ejemplo */}
+                {/* Laravel */}
                 <div className="services-box flex flex-col items-center">
-                    <RiTailwindCssFill size={"70"} fill="#00abf0" />
-                    <h3>Tailwind Css</h3>
-                    <p className='parrafo'>{t("tailwind")}</p>
+                    <SiLaravel size={"70"} fill="#00abf0" />
+                    <h3>Laravel</h3>
+                    <p className='parrafo'>{t("laravel")}</p>
                     <div className="transition-all duration-700 ease-in-out overflow-hidden"
-                         style={{ maxHeight: isExpanded ? "500px" : "0" }}>
-                        {isExpanded && (
-                            <p className="expanded-text pb-8">{t("tailwindext")}</p>
+                         style={{ maxHeight: isExpandedLaravel ? "500px" : "0" }}>
+                        {isExpandedLaravel && (
+                            <p className="expanded-text pb-8">{t("laravelext")}</p>
                         )}
                     </div>
                     <div className="flex flex-grow"></div>
-                    <a onClick={toggleExpand} href="#" id="botonTailwind" className="btn">
-                        {isExpanded ? t("showless") : t("showmore")}
+                    <a onClick={toggleExpandLaravel} href="#" className="btn">
+                        {isExpandedLaravel ? t("showless") : t("showmore")}
                     </a>
                 </div>
                 {/* <!-- React --> */}
@@ -138,26 +138,25 @@ function Skills() {
                         {isExpandedTs?t('showless'):t('showmore')}
                     </a>
                 </div>
-                {/* <!-- Github --> */}
+                {/* MySQL */}
                 <div className="services-box flex flex-col items-center">
-                    <RiGithubFill size={'70'} fill='#00abf0' />
-                    <h3>Github</h3>
+                    <SiMysql size={'70'} fill='#00abf0' />
+                    <h3>MySQL</h3>
                     <p className='parrafo'>
-                        {t('github')}
+                        {t('mysql')}
                     </p>
                     <div className={`transition-all duration-700 ease-in-out overflow-hidden`}
-                        style={{ maxHeight: isExpandedGithub ? '500px' : '0', }}>
-                        {isExpandedGithub && (
+                        style={{ maxHeight: isExpandedMysql ? '500px' : '0', }}>
+                        {isExpandedMysql && (
                             <p className='expanded-text pb-8'>
-                                {t('githubext')}      
+                                {t('mysqlext')}      
                             </p>
                             )
                         }
                     </div>
                     <div className="flex flex-grow"></div>
-                    <a onClick={toggleExpandGithub} href="#" id="botonTailwind" 
-                        className="btn">
-                        {isExpandedGithub?t('showless'):t('showmore')}
+                    <a onClick={toggleExpandMysql} href="#" className="btn">
+                        {isExpandedMysql?t('showless'):t('showmore')}
                     </a>
                 </div>
             </div>

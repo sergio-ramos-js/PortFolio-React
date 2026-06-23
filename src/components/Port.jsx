@@ -7,12 +7,16 @@ function Port() {
   const { t } = useTranslation();
   const [isSliderVisible, setIsSliderVisible] = useState(false);
   const [isSlider2Visible, setIsSlider2Visible] = useState(false);
+  const [isSlider3Visible, setIsSlider3Visible] = useState(false);
 
   const toggleSlider = () => {
     setIsSliderVisible(!isSliderVisible);
   };
   const toggleSlider2 = () => {
     setIsSlider2Visible(!isSlider2Visible);
+  };
+  const toggleSlider3 = () => {
+    setIsSlider3Visible(!isSlider3Visible);
   };
   // Close slider when ESC is pressed
   useEffect(() => {
@@ -21,6 +25,8 @@ function Port() {
         setIsSliderVisible(false);
       } else if (event.key === "Escape" && isSlider2Visible) {
         setIsSlider2Visible(false);
+      } else if (event.key === "Escape" && isSlider3Visible) {
+        setIsSlider3Visible(false);
       }
     };
 
@@ -30,7 +36,7 @@ function Port() {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isSliderVisible, isSlider2Visible]);
+  }, [isSliderVisible, isSlider2Visible, isSlider3Visible]);
   
   const images = [
     { original: "/images/libro_slider1.png", thumbnail: "/images/libro_slider1.png" },
@@ -52,12 +58,25 @@ function Port() {
     { original: "/images/turnero7.png", thumbnail: "/images/turnero7.png" },
     { original: "/images/turnero8.png", thumbnail: "/images/turnero8.png" },
   ];
+  const images3 = [
+    { original: "/images/mapa_tienda1.png", thumbnail: "/images/mapa_tienda1.png" },
+    { original: "/images/mapa_tienda5.png", thumbnail: "/images/mapa_tienda5.png" },
+    { original: "/images/mapa_tienda4.png", thumbnail: "/images/mapa_tienda4.png" },
+    { original: "/images/mapa_tienda3.png", thumbnail: "/images/mapa_tienda3.png" },
+    { original: "/images/mapa_tienda2.png", thumbnail: "/images/mapa_tienda2.png" },
+  ];
   return (
     <section className="portfolio" id="portfolio">
       <h2 className="heading">
         {t("latest")} <span>{t("project")}</span>
       </h2>
       <div className="portfolio-container">
+        <div className="cursor-pointer" id="slot6" onClick={toggleSlider3}>
+          <div className="portfolio-box">
+            <img src="images/mapa_tienda4.png" alt="" />
+            <p>{t("slot6")}</p>
+          </div>
+        </div>
         <div className="cursor-pointer " id="slot1" onClick={toggleSlider}>
           <div className="portfolio-box">
             <img src="images/libro3.png" alt="" />
@@ -90,12 +109,6 @@ function Port() {
           <div className="portfolio-box">
             <img src="images/imagesPath.png" alt="" />
             <p>{t("slot5")}</p>
-          </div>
-        </a>
-        <a id="slot6" href="#" target="_blank">
-          <div className="portfolio-box">
-            <img src="images/oldportfolio.png" alt="" />
-            <p>{t("slot6")}</p>
           </div>
         </a>
       </div>
@@ -246,6 +259,72 @@ function Port() {
         {/* BOTON CERRAR */}
         <button
           onClick={toggleSlider2}
+          className=" text-white bg-red-600 rounded-md px-3 pt-2 text-xl"
+        >
+          ✕
+        </button>
+      </div>
+      {/* SLIDER 3 */}
+      <div
+        className={`w-full h-screen flex flex-col justify-center items-center fixed bg-black top-0 left-0 z-50 ${
+          isSlider3Visible ? "block" : "hidden"
+        }`}
+      >
+        <div className="mt-14 lg:w-[60vw] md:w-[90vw] w-[95vw] h-auto text-[#00abf0] text-2xl text-center">
+          <ImageGallery
+            items={images3}
+            additionalClass="aver"
+            autoPlay={false}
+            showPlayButton={false}
+            showFullscreenButton={false}
+            renderLeftNav={(onClick, disabled) => (
+              <button
+                className="custom-left-nav"
+                onClick={onClick}
+                disabled={disabled}
+                style={{
+                  fontSize: "50px",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  color: "#00abf0",
+                  position: "absolute",
+                  top: "50%",
+                  left: "10px",
+                  transform: "translateY(-50%)",
+                  zIndex: "1000",
+                  fontWeight: "900",
+                }}
+              >
+                &lt;
+              </button>
+            )}
+            renderRightNav={(onClick, disabled) => (
+              <button
+                className="custom-right-nav"
+                onClick={onClick}
+                disabled={disabled}
+                style={{
+                  fontSize: "50px",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  color: "#00abf0",
+                  position: "absolute",
+                  top: "50%",
+                  right: "10px",
+                  transform: "translateY(-50%)",
+                  zIndex: "1000",
+                  fontWeight: "900",
+                }}
+              >
+                &gt;
+              </button>
+            )}
+          />
+        </div>
+        <button
+          onClick={toggleSlider3}
           className=" text-white bg-red-600 rounded-md px-3 pt-2 text-xl"
         >
           ✕

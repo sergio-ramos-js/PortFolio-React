@@ -1,4 +1,4 @@
-import { FaXTwitter, FaLinkedinIn, FaGithub, FaFacebookF } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedinIn, FaGithub, FaFacebookF, FaEnvelope } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
 
@@ -30,6 +30,9 @@ function Footer (){
                     </a>
                     <a href="https://github.com/sergio-ramos-js" target="_blank">
                         <FaGithub fill="#323946" />
+                    </a>
+                    <a href="mailto:oigresrol20@gmail.com" data-tooltip="oigresrol20@gmail.com">
+                        <FaEnvelope fill="#323946" />
                     </a>
                 </div>
             </div>

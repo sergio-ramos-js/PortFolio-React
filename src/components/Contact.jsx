@@ -8,7 +8,7 @@ function Contact() {
         {t("contactme")}
         <span>{t("me")}!</span>
       </h2>
-      <form action="https://formsubmit.co/sergio.ramos.orion@gmail.com" method="POST">
+      <form action="https://formsubmit.co/oigresrol20@gmail.com" method="POST">
         <div className="input-box">
           <input id="full-name" name="name" type="text" autoComplete="name" placeholder={t("fullname")}/>
           <input name="email" type="email" autoComplete="email" placeholder={t("email")} />
