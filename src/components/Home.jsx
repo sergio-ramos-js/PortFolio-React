@@ -2,8 +2,9 @@ import { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import ScrollReveal from "scrollreveal";
 import { useTranslation } from "react-i18next";
-import { FaXTwitter, FaLinkedinIn, FaGithub, FaFacebookF, FaEnvelope } from "react-icons/fa6";
+import { FaXTwitter, FaLinkedinIn, FaGithub, FaFacebookF } from "react-icons/fa6";
 import { RiInstagramFill } from "react-icons/ri";
+import EmailSocialLink from "./EmailSocialLink";
 
 function Home (){
     const { t } = useTranslation(); 
@@ -74,13 +75,7 @@ function Home (){
                         href="https://github.com/sergio-ramos-js" target="_blank">
                         <FaGithub />
                     </a>
-                    <a
-                        className="inline-flex justify-center items-center w-[4rem] h-[4rem] bg-transparent text-[2rem]"
-                        href="mailto:oigresrol20@gmail.com"
-                        data-tooltip="oigresrol20@gmail.com"
-                    >
-                        <FaEnvelope />
-                    </a>
+                    <EmailSocialLink className="inline-flex justify-center items-center w-[4rem] h-[4rem] bg-transparent text-[2rem]" />
                 </div>
                 <a className="btn" href="#">{t('download')}</a>
             </div>

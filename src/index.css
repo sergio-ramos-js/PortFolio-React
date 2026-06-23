@@ -209,23 +209,14 @@ span{
     color: var(--second-bg-color);
     box-shadow: 0 0 1rem var(--main-color);
 }
-.social-media a[data-tooltip]{
+.social-email-link{
     position: relative;
 }
-.social-media a[data-tooltip]::before,
-.social-media a[data-tooltip]::after{
+.social-email-tooltip{
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
-    pointer-events: none;
-    z-index: 10;
-}
-.social-media a[data-tooltip]::after{
-    content: attr(data-tooltip);
     bottom: calc(100% + 1.2rem);
+    transform: translateX(-50%);
     padding: .6rem 1rem;
     background: var(--second-bg-color);
     color: var(--main-color);
@@ -235,15 +226,28 @@ span{
     font-weight: 600;
     white-space: nowrap;
     box-shadow: 0 0 1rem rgba(0, 171, 240, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+    pointer-events: none;
+    z-index: 10;
 }
-.social-media a[data-tooltip]::before{
+.social-email-link::before{
     content: "";
+    position: absolute;
+    left: 50%;
     bottom: calc(100% + .4rem);
+    transform: translateX(-50%);
     border: .6rem solid transparent;
     border-top-color: var(--main-color);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+    pointer-events: none;
+    z-index: 10;
 }
-.social-media a[data-tooltip]:hover::before,
-.social-media a[data-tooltip]:hover::after{
+.social-email-link.show-email .social-email-tooltip,
+.social-email-link.show-email::before{
     opacity: 1;
     visibility: visible;
 }
