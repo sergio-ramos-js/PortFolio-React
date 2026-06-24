@@ -493,6 +493,63 @@ span{
         margin-top: -50px;
     }
 }
+/* slider 3: miniaturas a la izquierda, controles debajo de la imagen */
+.slider-3-wrapper {
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    grid-template-rows: auto auto;
+    width: 100%;
+    align-items: start;
+}
+.slider-3-gallery {
+    grid-column: 1 / -1;
+    grid-row: 1;
+}
+.slider-3-controls {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 0.8rem;
+}
+.slider-3-nav-btn {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #00abf0;
+    background: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.2rem 0.8rem;
+}
+.slider-3-close-btn {
+    color: #fff;
+    background-color: #dc2626;
+    border-radius: 0.375rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.slider-3-gallery .image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left {
+    width: 10rem;
+}
+.slider-3-gallery .image-gallery-thumbnail {
+    width: 100%;
+    border-width: 2px;
+}
+@media (max-width: 768px) {
+    .slider-3-wrapper {
+        grid-template-columns: 8.7rem 1fr;
+    }
+    .slider-3-gallery .image-gallery-thumbnails-wrapper.image-gallery-thumbnails-left {
+        width: 8.1rem;
+    }
+    .slider-3-nav-btn {
+        font-size: 2.4rem;
+    }
+}
 /*  */
 .contact h2{
     margin-bottom: 3rem;
